@@ -36,5 +36,42 @@ function probFour() {
 probFour();
 
 //problem 6
+function probSix() {
+    function decode(message) {
+        const firstLetter = message.charAt(0);
+        let result = ' ';
+        let checker = {
+            'a' : message.charAt(1),
+            'b' : message.charAt(2),
+            'c' : message.charAt(3),
+            'd' : message.charAt(4)
+        }
+    
+        for (let i = 0; i < Object.values(checker).length; i++){
+            if(firstLetter === Object.keys(checker)[i]) {
+                return (Object.values(checker)[i]);
+            }
+            
+        }
+        return result;
+    }
+    
+    function decodeWords(wholeMessage) {
+        let decoded = '';
+        let words = wholeMessage.split(' ');
+    
+        for(let i = 0; i <= words.length - 1; i++) {
+            decoded += decode(words[i]);
+        }
+    
+        return decoded;
+    }
+    
+    console.log(decode('cycle'));
+    
+    console.log(decodeWords('craft block argon meter bells brown croon droop'));
+}
+
+probSix();
 
 //problem 8

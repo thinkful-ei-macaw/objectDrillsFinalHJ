@@ -50,9 +50,14 @@ arr.forEach(arr => {
 
 //Factory Functions with LOTR #7
 function createCharacter(name, nickname, race, origin, attack, defense){
-    const obj = {
-      name: `${name}`,
-      nickname: `${nickname}`,
-      
-    }
+  const obj = {
+    name: `${name}`,
+    nickname: `${nickname}`,
+    race: `${race}`,
+    origin: `${origin}`,
+    attack: `${attack}`,
+    defense: `${defense}`,
+    describe: `${name} is a ${race} from ${origin}.`
+    evaluateFight: 
+  };
 }

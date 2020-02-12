@@ -75,7 +75,7 @@ function probSix() {
 probSix();
 
 //problem 8
-/*function probEight() {
+function probEight() {
     const HEROES = [
         { id: 1, name: 'Captain America', squad: 'Avengers' },
         { id: 2, name: 'Iron Man', squad: 'Avengers' },
@@ -87,12 +87,37 @@ probSix();
       ];
 
     function findOne(arr, query) {
-        for(let i = 0; i < HEROES.length - 1; i++) {
-
+        if (Object.keys(query).length === 1) {
+            for(let i = 0; i < Object.keys(arr).length - 1; i++) {
+                for(let j = 0; j < Object.keys(arr[i]).length; j++) {
+                    if(Object.values(query) == arr[i][Object.keys(arr[i])[j]]) {
+                        return arr[i];
+                    }
+                }
+            }
+    
+            return null;
+        } else if (Object.keys(query).length > 1) {
+            for(let i = 0; i < Object.keys(arr).length - 1; i++) {
+                for(let j = 0; j < Object.keys(arr[i]).length; j++) {
+                    for(let k = 0; k < Object.keys(query).length - 1; k++) {
+                        if(Object.values(query)[k] == arr[i][Object.keys(arr[i])[j]]) {
+                            return arr[i];
+                        }
+                    }
+                }
+            }
+    
+            return null;
         }
-      }
+    }
+
+    console.log(findOne(HEROES, { id: 10 }));
+    console.log(findOne(HEROES, { id: 1 }));
+    console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
 }
-*/
+
+probEight();
 
 
 

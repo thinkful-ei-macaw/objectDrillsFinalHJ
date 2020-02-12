@@ -119,5 +119,53 @@ function probEight() {
 
 probEight();
 
+//Problem 8a 
+
+function probEightA() {
+    const Database = {
+        store: {
+          heroes: [
+            { id: 1, name: 'Captain America', squad: 'Avengers' },
+            { id: 2, name: 'Iron Man', squad: 'Avengers' },
+            { id: 3, name: 'Spiderman', squad: 'Avengers' },
+            { id: 4, name: 'Superman', squad: 'Justice League' },
+            { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+            { id: 6, name: 'Aquaman', squad: 'Justice League' },
+            { id: 7, name: 'Hulk', squad: 'Avengers' },
+          ]
+        },
+        findOne : function(tol) {
+            this.tol = tol;
+
+            if (Object.keys(this.tol).length === 1) {
+                for(let i = 0; i < Object.keys(this.store.heroes).length - 1; i++) {
+                    for(let j = 0; j < Object.keys(this.store.heroes[i]).length; j++) {
+                        if(Object.values(this.tol) == this.store.heroes[i][Object.keys(this.store.heroes[i])[j]]) {
+                            return this.store.heroes[i];
+                        }
+                    }
+                }
+
+            } else if (Object.keys(this.tol).length > 1) {
+                for(let i = 0; i < Object.keys(this.store.heroes).length - 1; i++) {
+                    for(let j = 0; j < Object.keys(this.store.heroes[i]).length; j++) {
+                        for(let k = 0; k < Object.keys(query).length - 1; k++) {
+                            if(Object.values(query)[k] == this.store.heroes[i][Object.keys(this.store.heroes[i])[j]]) {
+                                return this.store.heroes[i];
+                            }
+                        }
+                    }
+                }
+        
+                return null;
+            }
+        }
+      };
+
+    console.log(Database.findOne({ id: 2 }));
+
+}
+
+probEightA();
 
 
